@@ -1,6 +1,13 @@
 @import 'tailwindcss';
 
+@layer base {
+  body {
+    @apply font-normal text-white;
+  }
+}
+
 @theme {
+  --color-primary: #F3743D;
   --font-display: 'Satoshi', 'sans-serif';
   --breakpoint-3xl: 1920px;
   --color-avocado-100: oklch(0.99 0 0);
