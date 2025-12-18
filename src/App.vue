@@ -1,24 +1,20 @@
 <script setup>
-import IButton from './components/IButton/IButton.vue'
-import ISvgIcon from './components/SvgIcon/ISvgIcon.vue'
+import HomePageView from '@/views/HomePageView.vue'
+
+const isDesktop = window.innerWidth > 1024
+const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024
+const isMobile = window.innerWidth < 768
 </script>
 
 <template>
-  <main class="flex h-screen">
-    <section class="flex flex-1 flex-col items-center justify-center bg-primary p-16">
-      <ISvgIcon pathName="icon-map-pin" width="81" height="100" class="mb-6 fill-white" />
-      <h1 class="mb-7 text-center text-[38px] leading-[1.05] font-bold tracking-[-0.01em]">
-        IT traveler
-      </h1>
-      <p class="mb-11 max-w-127 text-center text-[18px] leading-[1.33] tracking-[-0.02em]">
-        Простий і зручний веб додаток, який дозволить тобі відмічати твої улюблені місця, а також
-        ті, в яких би ти дуже хотів побувати. Тож не зволікай і спробуй сам.
-      </p>
-      <IButton class="mb-auto"></IButton>
-      <p>У вас ще немає аккаунту? Зареєструватися або увійти</p>
-    </section>
-    <section class="flex-1">
-      <img class="h-full object-cover" src="./assets/images/static-map.avif" alt="static-map" />
-    </section>
-  </main>
+  <template v-if="isDesktop">
+    <HomePageView />
+  </template>
+  <template v-else-if="isTablet">
+    <div><h1 class="text-black">Tablet</h1></div>
+  </template>
+  <template v-else="isMobile">
+    <div v-show="!isDesktop && !isTablet"><h1 class="text-black">Mobile in v-else</h1></div>
+  </template>
+  <div v-show="!isDesktop && !isTablet"><h1 class="text-black">Mobile in v-show</h1></div>
 </template>
