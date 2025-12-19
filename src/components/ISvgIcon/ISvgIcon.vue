@@ -1,5 +1,5 @@
-<script setup>
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
   pathName: {
     type: String,
     required: true

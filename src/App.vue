@@ -1,20 +1,22 @@
-<script setup>
+<script setup lang="ts">
 import HomePageView from '@/views/HomePageView.vue'
 
-const isDesktop = window.innerWidth > 1024
-const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024
-const isMobile = window.innerWidth < 768
+const fruits = ['kiwi', 'banana', 'mango']
+const fruitMap = {
+  kiwi: 'Super kiwi',
+  banana: 'Super banana',
+  mango: 'Super mango',
+}
 </script>
 
 <template>
-  <template v-if="isDesktop">
-    <HomePageView />
-  </template>
-  <template v-else-if="isTablet">
-    <div><h1 class="text-black">Tablet</h1></div>
-  </template>
-  <template v-else="isMobile">
-    <div v-show="!isDesktop && !isTablet"><h1 class="text-black">Mobile in v-else</h1></div>
-  </template>
-  <div v-show="!isDesktop && !isTablet"><h1 class="text-black">Mobile in v-show</h1></div>
+  <div v-for="(fruit, index) in fruits" :key="fruit">
+    <h1 class="text-black">{{ index }}: {{ fruit }}</h1>
+  </div>
+  <div v-for="(fruit, key) in fruitMap" :key="fruit">
+    <h1 class="text-black">{{ key }}: {{ fruit }}</h1>
+  </div>
+  <div v-for="value in 5" :key="value"><h1 class="text-black">{{ value }}</h1></div>
+  <div v-for="char in 'SomeText'" :key="char"><h1 class="text-black">{{ char }}</h1></div>
+  <HomePageView />
 </template>
