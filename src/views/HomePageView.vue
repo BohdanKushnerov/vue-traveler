@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import IButton from '@/components/IButton/IButton.vue'
 import ISvgIcon from '@/components/ISvgIcon/ISvgIcon.vue'
 </script>
@@ -14,7 +14,7 @@ import ISvgIcon from '@/components/ISvgIcon/ISvgIcon.vue'
         Простий і зручний веб додаток, який дозволить тобі відмічати твої улюблені місця, а також
         ті, в яких би ти дуже хотів побувати. Тож не зволікай і спробуй сам.
       </p>
-      <IButton class="mb-auto"></IButton>
+      <IButton class="mb-auto">Почати роботу</IButton>
       <p>У вас ще немає аккаунту? Зареєструватися або увійти</p>
     </section>
     <section class="flex-1">

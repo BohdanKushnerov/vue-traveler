@@ -25,7 +25,8 @@ const spritePath = '/src/assets/sprite.svg'
   <svg
     :width="width || size"
     :height="height || size"
-    class="fill-current stroke-current"
+    fill="currentColor"
+    stroke="currentColor"
     :class="$attrs.class"
   >
     <use :href="`${spritePath}#${pathName}`" />
