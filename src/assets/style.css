@@ -8,6 +8,7 @@
 
 @theme {
   --color-primary: #F3743D;
+  --color-gray: rgba(44,44,44,0.5);
   --font-display: 'Satoshi', 'sans-serif';
   --breakpoint-3xl: 1920px;
   --color-avocado-100: oklch(0.99 0 0);
