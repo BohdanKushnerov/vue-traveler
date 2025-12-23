@@ -6,7 +6,12 @@ import ISvgIcon from '@/components/ISvgIcon/ISvgIcon.vue'
 <template>
   <main class="flex h-screen">
     <section class="flex flex-1 flex-col items-center justify-center bg-primary p-16">
-      <ISvgIcon pathName="icon-map-pin" width="81" height="100" class="mb-6 fill-white" />
+      <ISvgIcon
+        pathName="icon-map-pin"
+        width="81"
+        height="100"
+        class="mb-6 fill-white stroke-white"
+      />
       <h1
         class="mb-7 text-center text-[38px] leading-[1.05] font-bold tracking-[-0.01em] text-white"
       >
