@@ -22,10 +22,9 @@ const onSubmit = () => emit('submit', toRaw(userData))
 
 <template>
   <form
-    class="flex flex-1 flex-col items-center justify-center bg-primary p-16"
+    class="flex flex-1 flex-col items-center justify-center"
     @submit.prevent="onSubmit"
   >
-    <div class="h-123.25 w-124.75 rounded-[17px] bg-white p-10">
       <IInput
         id="name"
         v-model="userData.name"
@@ -54,6 +53,5 @@ const onSubmit = () => emit('submit', toRaw(userData))
         type="submit"
         >Створити аккаунт</IButton
       >
-    </div>
   </form>
 </template>

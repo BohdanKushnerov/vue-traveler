@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import IButton from '@/components/IButton/IButton.vue'
 import ISvgIcon from '@/components/ISvgIcon/ISvgIcon.vue'
+import AuthContainer from '@/components/Auth/AuthContainer/AuthContainer.vue'
 </script>
 
 <template>
-  <main class="flex h-screen">
+  <AuthContainer>
     <section class="flex flex-1 flex-col items-center justify-center bg-primary p-16">
       <ISvgIcon
         pathName="icon-map-pin"
@@ -26,12 +27,5 @@ import ISvgIcon from '@/components/ISvgIcon/ISvgIcon.vue'
       <IButton class="mb-auto text-white">Почати роботу</IButton>
       <p class="text-white">У вас ще немає аккаунту? Зареєструватися або увійти</p>
     </section>
-    <section class="flex-1">
-      <img
-        class="h-full w-full object-cover"
-        src="/src/assets/images/static-map.avif"
-        alt="static-map"
-      />
-    </section>
-  </main>
+  </AuthContainer>
 </template>

@@ -1,13 +1,16 @@
 <script setup lang="ts">
-// import HomePageView from '@/views/HomePageView.vue'
-// import FavoritePlaces from '@/components/FavoritePlaces/FavoritePlaces.vue'
-// import FavoritePlace from '@/components/FavoritePlace/FavoritePlace.vue'
-// import IInput from '@/components/IInput/IInput.vue'
-import AuthPageView from '@/views/AuthPageView.vue'
+import HomePageView from '@/views/HomePageView.vue'
+import RegistrationPageView from '@/views/RegistrationPageView.vue'
+import LoginPageView from '@/views/LoginPageView.vue'
+import FavoritePlaces from '@/components/FavoritePlaces/FavoritePlaces.vue'
+import FavoritePlace from '@/components/FavoritePlace/FavoritePlace.vue'
 </script>
 
 <template>
   <!-- <HomePageView /> -->
+  <!-- <RegistrationPageView /> -->
+  <LoginPageView />
+
   <!-- <FavoritePlaces>
     <template #label
       ><p class="text-sm leading-[143%] font-normal tracking-[-0.03em] text-gray">
@@ -17,7 +20,5 @@ import AuthPageView from '@/views/AuthPageView.vue'
     <template #list>
       <FavoritePlace v-for="value in 4" :key="value" />
     </template>
-  </FavoritePlaces> -->
-  <!-- <IInput id="text" label="Test label" /> -->
-  <AuthPageView />
+  </FavoritePlaces>  -->
 </template>

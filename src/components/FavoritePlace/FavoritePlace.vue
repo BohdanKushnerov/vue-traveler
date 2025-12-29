@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ISvgIcon from '@/components/ISvgIcon/ISvgIcon.vue'
+import IconButton from '@/components/IconButton/IconButton.vue'
 </script>
 
 <template>
