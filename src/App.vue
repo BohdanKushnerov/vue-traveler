@@ -4,12 +4,22 @@ import RegistrationPageView from '@/views/RegistrationPageView.vue'
 import LoginPageView from '@/views/LoginPageView.vue'
 import FavoritePlaces from '@/components/FavoritePlaces/FavoritePlaces.vue'
 import FavoritePlace from '@/components/FavoritePlace/FavoritePlace.vue'
+import IModal from '@/components/IModal/IModal.vue'
+import LoginForm from '@/components/Auth/LoginForm/LoginForm.vue'
+import { ref } from 'vue'
+
+const isOpen = ref(true)
+
+const closeModal = () => {
+  isOpen.value = false
+}
 </script>
 
 <template>
   <!-- <HomePageView /> -->
   <!-- <RegistrationPageView /> -->
   <LoginPageView />
+  <IModal v-if="isOpen" @close="closeModal"><LoginForm @submit="console.log" /></IModal>
 
   <!-- <FavoritePlaces>
     <template #label
