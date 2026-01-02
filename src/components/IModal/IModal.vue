@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, Teleport } from 'vue'
 import ISvgIcon from '../ISvgIcon/ISvgIcon.vue'
 
 const emit = defineEmits(['close'])
@@ -14,7 +14,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Teleport to="body">
+  <component :is="Teleport" to="body">
     <div
       class="fixed inset-0 flex h-full w-full items-center justify-center bg-[rgba(30,30,30,0.5)]"
       @click.self="emit('close')"
@@ -26,5 +26,5 @@ onUnmounted(() => {
         <slot></slot>
       </div>
     </div>
-  </Teleport>
+  </component>
 </template>
