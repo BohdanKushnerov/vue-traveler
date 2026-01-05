@@ -20,7 +20,7 @@ onUnmounted(() => {
       @click.self="emit('close')"
     >
       <div class="relative rounded-[17px] bg-white px-10 py-8.75">
-        <button class="absolute top-6 right-6" @click="emit('close')">
+        <button class="absolute top-6 right-6 cursor-pointer" @click="emit('close')">
           <ISvgIcon pathName="icon-x" width="28" height="28" />
         </button>
         <slot></slot>

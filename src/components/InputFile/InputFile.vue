@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref, useAttrs } from 'vue'
 import ISvgIcon from '../ISvgIcon/ISvgIcon.vue'
 
 const emit = defineEmits(['uploadFile'])
@@ -31,19 +31,25 @@ const handleUploadFile = (event: Event) => {
     }
   }
 }
+
+const attrs = useAttrs()
+
+const inputClass = computed(() => attrs.class)
 </script>
 
 <template>
   <label
     for="file"
-    class="group inline-flex items-center justify-center gap-2 transition-colors duration-300 hover:cursor-pointer hover:text-orange-500"
+    :class="[
+      'group inline-flex items-center justify-center gap-2 transition-colors duration-300 hover:cursor-pointer hover:text-orange-500',
+      inputClass,
+    ]"
   >
     <ISvgIcon pathName="icon-attachment" width="18" height="18" />
     <input id="file" type="file" accept="image/*" class="hidden" @change="handleUploadFile" />
-    <span
+    <slot
       class="box-decoration-slice text-[12px] leading-[117%] font-normal text-[#2c2c2c] underline decoration-black transition-colors duration-300 group-hover:text-orange-500 group-hover:decoration-orange-500"
-      >Натисніть тут, щоб додати фото</span
-    >
+    ></slot>
   </label>
   <div v-if="errorMessage" class="text-[12px] font-normal text-red-500">{{ errorMessage }}</div>
 </template>
